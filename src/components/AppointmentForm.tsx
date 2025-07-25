@@ -213,7 +213,7 @@ export function AppointmentForm({ onSave, onCancel }: AppointmentFormProps) {
                     <SelectTrigger className="transition-all duration-200 hover:shadow-md">
                       <SelectValue placeholder="Select specialty" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="z-50">
                       {specialties.map((specialty) => (
                         <SelectItem key={specialty} value={specialty} className="transition-colors hover:bg-primary/10">
                           {specialty}
@@ -241,14 +241,14 @@ export function AppointmentForm({ onSave, onCancel }: AppointmentFormProps) {
                         {selectedDate ? format(selectedDate, "PPP") : "Pick a date"}
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
+                    <PopoverContent className="w-auto p-0 z-50" align="start">
                       <Calendar
                         mode="single"
                         selected={selectedDate}
                         onSelect={handleDateSelect}
                         disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
                         initialFocus
-                        className={cn("p-3 pointer-events-auto")}
+                        className="p-3"
                       />
                     </PopoverContent>
                   </Popover>
@@ -408,15 +408,16 @@ export function AppointmentForm({ onSave, onCancel }: AppointmentFormProps) {
                             className="w-16 h-8 text-sm"
                             min="1"
                             max="999"
+                            placeholder="30"
                           />
                           <Select
                             value={reminder.unit}
-                            onValueChange={(value) => updateCustomReminder(reminder.id, 'unit', value)}
+                            onValueChange={(value) => updateCustomReminder(reminder.id, 'unit', value as 'minutes' | 'hours' | 'days')}
                           >
                             <SelectTrigger className="w-24 h-8 text-sm">
                               <SelectValue />
                             </SelectTrigger>
-                            <SelectContent>
+                            <SelectContent className="z-50">
                               <SelectItem value="minutes">Min</SelectItem>
                               <SelectItem value="hours">Hours</SelectItem>
                               <SelectItem value="days">Days</SelectItem>
@@ -425,12 +426,12 @@ export function AppointmentForm({ onSave, onCancel }: AppointmentFormProps) {
                           <span className="text-sm text-muted-foreground">before via</span>
                           <Select
                             value={reminder.type}
-                            onValueChange={(value) => updateCustomReminder(reminder.id, 'type', value)}
+                            onValueChange={(value) => updateCustomReminder(reminder.id, 'type', value as 'notification' | 'email' | 'voice')}
                           >
                             <SelectTrigger className="w-32 h-8 text-sm">
                               <SelectValue />
                             </SelectTrigger>
-                            <SelectContent>
+                            <SelectContent className="z-50">
                               <SelectItem value="notification">📱 Push</SelectItem>
                               <SelectItem value="email">📧 Email</SelectItem>
                               <SelectItem value="voice">🎙️ Voice Call</SelectItem>
