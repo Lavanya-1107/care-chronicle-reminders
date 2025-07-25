@@ -69,6 +69,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'gradient-radial': 'var(--gradient-radial)',
+				'gradient-mesh': 'var(--gradient-mesh)',
+				'gradient-aurora': 'var(--gradient-aurora)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

@@ -77,9 +77,11 @@ const Index = () => {
 
   // Fallback
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">HealthCare Companion</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-aurora relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-mesh opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-radial"></div>
+      <div className="text-center relative z-10">
+        <h1 className="text-4xl font-bold mb-4 text-primary">HealthCare Companion</h1>
         <p className="text-xl text-muted-foreground">Loading...</p>
       </div>
     </div>

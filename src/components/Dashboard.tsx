@@ -118,9 +118,11 @@ export function Dashboard({ patientName, onAddAppointment, onAddMedication, onSe
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary-soft/10 to-secondary-soft/10">
+    <div className="min-h-screen bg-gradient-aurora relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-mesh opacity-25"></div>
+      <div className="absolute inset-0 bg-gradient-radial"></div>
       {/* Header */}
-      <header className="bg-card/80 backdrop-blur-sm border-b shadow-soft">
+      <header className="bg-card/90 backdrop-blur-sm border-b shadow-soft relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center gap-3">
@@ -146,7 +148,7 @@ export function Dashboard({ patientName, onAddAppointment, onAddMedication, onSe
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         {/* Active Reminders */}
         {reminders.length > 0 && (
           <div className="mb-8">

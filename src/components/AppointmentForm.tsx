@@ -86,8 +86,10 @@ export function AppointmentForm({ onSave, onCancel }: AppointmentFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary-soft/10 to-secondary-soft/10 p-4">
-      <div className="max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gradient-aurora relative overflow-hidden p-4">
+      <div className="absolute inset-0 bg-gradient-mesh opacity-25"></div>
+      <div className="absolute inset-0 bg-gradient-radial"></div>
+      <div className="max-w-2xl mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-6">
           <Button variant="outline" onClick={onCancel} size="sm">
             <ArrowLeft className="h-4 w-4" />

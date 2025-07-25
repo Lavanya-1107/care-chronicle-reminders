@@ -99,8 +99,10 @@ export function PatientOnboarding({ onComplete }: PatientOnboardingProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-primary-soft/20 to-secondary-soft/20 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl">
+    <div className="min-h-screen bg-gradient-aurora relative overflow-hidden flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+      <div className="absolute inset-0 bg-gradient-radial"></div>
+      <div className="w-full max-w-2xl relative z-10">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
             <div className="bg-gradient-to-r from-primary to-secondary p-3 rounded-full shadow-glow">
